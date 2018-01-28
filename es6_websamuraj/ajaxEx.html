@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+<!--   http://numbersapi.com -->
+<!--   http://numbersapi.com/42 -->
+   
+   <input type="number">
+   <div id="result"></div>
+   
+   <script>
+        
+       const userInput = document.querySelector('input');
+       const resultPlace = document.querySelector('#result');
+       
+       function getNumber() {
+           const inputValue = userInput.value;
+           
+           const xhttp = new XMLHttpRequest();
+           xhttp.open('GET', 'http://numbersapi.com/' + inputValue + '/year');
+           
+           xhttp.send();
+           
+           xhttp.onload = function() {
+               if(this.status === 200) {
+                   resultPlace.textContent = this.responseText;
+               }
+           }
+       }
+       
+       userInput.addEventListener('input', getNumber);
+       
+    
+   </script>
+    
+</body>
+</html>

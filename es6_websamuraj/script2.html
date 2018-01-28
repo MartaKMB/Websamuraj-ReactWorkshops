@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+   <script>
+       
+       const arrayNum = [1,2,3];
+    
+       function dodaj(...sumArray) {
+           let sum = 0;
+           for(element of sumArray) {
+               sum += element;
+           }
+           return sum;
+       }
+       
+       function srednia(...sumArray) {
+           let sum = 0;
+           for(element of sumArray) {
+               sum += element;
+           }
+           
+           return sum / sumArray.length;
+       }
+       
+       function dodajZabString(...sumArray) {
+           let sum = 0;
+           for(element of sumArray) {
+               sum += parseInt(element);
+           }
+           
+           return sum / sumArray.length;
+       }
+       
+       // Prototype
+       
+       class Animal {
+           add() {}
+       }
+       
+       console.log(Animal.prototype);
+       
+       console.log(44..toString)
+       
+       class Czlowiek {
+           oddycha() {}
+       }
+       
+       // przypisanie do konstruktora, w konstruktorze klasa, którą stworzylimy
+       class Hydraulik extends Czlowiek{}
+       
+       const zbyszek = new Hydraulik;
+       console.log(zbyszek);
+       console.log(zbyszek.constructor);
+       
+       /*
+       class Mechanik extends Osoba {
+           constructor(name, age) {
+               super(name);
+               this.age = age;
+           }
+       }
+       */
+       
+       const array = []
+       
+       const cos = new array.constructor(2,2)
+       console.log(cos); // -> [2,2]
+       
+       class Ktos {
+           static nazwaKlasy() {
+               console.log('nazwa klasy');
+           }
+       }
+       
+       Ktos.nazwaKlasy()
+       
+       let exampleJSON = '{"key": "nowa", "key2": "nowa2"}';
+       const objJSON = JSON.parse(exampleJSON);
+       console.log(objJSON);
+       console.log(JSON.stringify(objJSON));
+    
+    </script>
+    
+</body>
+</html>
